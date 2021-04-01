@@ -57,7 +57,7 @@ The playbook implements the following tasks:
 - Installs docker, python module, images, and enables docker service
 - Increases system memory
 - Downloads and launches docker containers (i.e., web, elk, etc.)
-- Installs, sets up, starts, and enables filebeat 
+- Installs, sets up, starts, and enables filebeat & metricbeat
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
