@@ -45,7 +45,7 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 10.0.0.1 10.0.0.2    |
+| Jump Box | Yes                 | Local machine IP     |
 | Web VMs  | No                  |                      |
 |          |                     |                      |
 
