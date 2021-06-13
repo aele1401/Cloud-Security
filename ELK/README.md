@@ -73,7 +73,7 @@ I have installed the following Beats on these machines:
 - Filebeat
 - Metricbeat
 
-These Beats allow us to collect the following information from each machine:
+These Beats allows me to collect the following information from each machine:
 - Filebeat to collect file logs that helps in investigations during security breaches.
 - Metricbeat collects metric information, which shows us system health, performance, etc. 
 
