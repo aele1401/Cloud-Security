@@ -75,7 +75,7 @@ I have installed the following Beats on these machines:
 
 These Beats allow me to collect the following information from each machine:
 - Filebeat to collect file logs that helps in investigations during security breaches.
-- Metricbeat collects metric information, which shows us system health, performance, etc. 
+- Metricbeat collects metric information, which shows system health, performance, etc. 
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
