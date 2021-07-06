@@ -21,7 +21,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to limiting access to the network.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the log files and system metrics.
+Integrating an ELK server allows administrators to easily monitor the vulnerable VMs for changes to the log files and system metrics.
 
 The configuration details of each machine may be found below.
 
@@ -34,9 +34,9 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not exposed to the public internet. 
 
-Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from specific IP addresses that are whitelisted.
+Only the Jump Box machine can accept connections from the internet. Access to this machine is only allowed from specific IP addresses that are whitelisted.
 
 
 Machines within the network can only be accessed by web servers.
@@ -73,8 +73,8 @@ I have installed the following Beats on these machines:
 - Filebeat
 - Metricbeat
 
-These Beats allow me to collect the following information from each machine:
-- Filebeat to collect file logs that helps in investigations during security breaches.
+These Beats allow the administrator to collect the following information from each machine:
+- Filebeat to collect file logs that helps with detecting malicious activity..
 - Metricbeat collects metric information, which shows system health, performance, etc. 
 
 ### Using the Playbook
