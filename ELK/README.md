@@ -25,19 +25,20 @@ Integrating an ELK server allows administrators to easily monitor the vulnerable
 
 The configuration details of each machine may be found below.
 
-| Name     | Function  | IP Address | Operating System |
-|----------|-----------|------------|------------------|
-| Jump Box | Gateway   | 10.0.0.1   | Linux            |
-| Web1     |VM w/Docker| 10.1.0.11  | Linux            |
-| Web2     |VM w/Docker| 10.1.0.9   | Linux            |
-| Web3     |VM w/Docker| 10.1.0.12  | Linux            |
+| Name     | Function     | IP Address     | Operating System |
+|----------|--------------|----------------|------------------|
+| Jump Box |Gateway       | 10.0.0.7       | Linux            |
+| Web1     |App Server    | 10.1.0.11      | Linux            |
+| Web2     |App Server    | 10.1.0.9       | Linux            |
+| Web3     |App Server    | 10.1.0.12      | Linux            |
+| LB       |Load Balancer | 13.89.50.12    | Linux            |
+| ELK      |ELK Server    | 192.168.1.100  | Linux            |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public internet. 
 
 Only the Jump Box machine can accept connections from the internet. Access to this machine is only allowed from specific IP addresses that are whitelisted.
-
 
 Machines within the network can only be accessed by web servers.
 
@@ -46,18 +47,18 @@ A summary of the access policies in place can be found in the table below.
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
 | Jump Box | Yes                 | Local machine IP     |
+| ELK      | Yes                 | Local machine IP     |
 | Web VMs  | No                  | None                 |
-|          |                     |                      |
 
-### Elk Configuration
+### ELK Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it automates drudgerous tasks.
 
 The playbook implements the following tasks:
-- Installs docker, python module, images, and enables docker service
-- Increases system memory
+- Installs docker images (docker.io), python module (python3-pip), and enables docker service.
+- Increases system memory with sysctl module.
 - Downloads and launches docker containers (i.e., web, elk, etc.)
-- Installs, sets up, starts, and enables filebeat & metricbeat
+- Installs, sets up, and enables filebeat & metricbeat.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -65,9 +66,9 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- 10.1.0.11
-- 10.1.0.09
-- 10.1.0.12
+- Web1: 10.1.0.11
+- Web2: 10.1.0.09
+- Web3: 10.1.0.12
 
 I have installed the following Beats on these machines:
 - Filebeat
@@ -81,6 +82,6 @@ These Beats allow the administrator to collect the following information from ea
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the configuration (preconfigured) file to your ansible playbook.
+- Copy the configuration (preconfigured) files to your ansible playbook.
 - Update the ansible.cfg file to include your ELK server IP address.
 - Run the playbook, and navigate to your kibana site to check that the installation worked as expected.
