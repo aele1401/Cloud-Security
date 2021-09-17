@@ -49,6 +49,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | Local machine IP     |
 | ELK      | Yes                 | Local machine IP     |
 | Web VMs  | No                  | None                 |
+| LB	   | Yes		 | Local machine IP	|
 
 ### ELK Configuration
 
