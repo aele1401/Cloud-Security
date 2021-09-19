@@ -105,5 +105,5 @@ To use filebeat:
 To use Metricbeat:
 - Edit /etc/ansible/files/metricbeat-config.yml in the ansible on the control node to include the ELK IP address.
 	* Note: Remember to update the default login credentials to ensure security.
-_ Run the playbook file
+- Run the playbook file
 	* ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml
