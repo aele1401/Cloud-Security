@@ -38,7 +38,7 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public internet. 
 
-Only the Jump Box machine can accept connections from the internet. Access to this machine is only allowed from specific IP addresses that are whitelisted.
+Only the Jump Box and ELK machines can accept connections from the internet. Access to this machine is only allowed from specific IP addresses that are whitelisted.
 
 Machines within the network can only be accessed by web servers.
 
