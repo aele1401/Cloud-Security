@@ -31,7 +31,6 @@ The configuration details of each machine may be found below.
 | Web1     |App Server    | 10.1.0.11      | Linux            |
 | Web2     |App Server    | 10.1.0.9       | Linux            |
 | Web3     |App Server    | 10.1.0.12      | Linux            |
-| LB       |Load Balancer | 13.89.50.12    | Linux            |
 | ELK      |ELK Server    | 192.168.1.100  | Linux            |
 
 ### Access Policies
@@ -49,7 +48,6 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box | Yes                 | Local machine IP     |
 | ELK      | Yes                 | Local machine IP     |
 | Web VMs  | No                  | 192.168.1.100        |
-| LB	   | Yes		 | Local machine IP	|
 
 ### ELK Configuration
 
