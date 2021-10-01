@@ -74,7 +74,7 @@ I have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow the administrator to collect the following information from each machine:
-- Filebeat to collect file logs that helps with detecting malicious activity.
+- Filebeat to collect file logs that helps with detecting malicious activity and anomalies.
 - Metricbeat collects metric information, which shows system health, performance, etc. 
 
 ### Using the Playbook
