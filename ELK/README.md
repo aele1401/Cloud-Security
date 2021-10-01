@@ -84,26 +84,26 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the configuration (preconfigured) files to your ansible playbook.
-	* Copy web.yml and elk.yml files into your /etc/ansible/roles/ directory under your ansible container.
+	* `Copy web.yml and elk.yml files into your /etc/ansible/roles/ directory under your ansible container.`
 - Attach your ansible docker container.
-	* Attach with: sudo docker attach [your.container.name]
+	* `Attach with: sudo docker attach [your.container.name]`
 - Update the ansible.cfg file to include your ELK server IP address.
-	* Navigate to /etc/ansible/hosts and update the hosts file to include your ELK server IP address.
-	* Note: Run ansible_python_interpreter=/usr/bin/python3 to make sure that the correct python module is installed. 
+	* `Navigate to /etc/ansible/hosts and update the hosts file to include your ELK server IP address.`
+	* `Note: Run ansible_python_interpreter=/usr/bin/python3 to make sure that the correct python module is installed.` 
 - Run the playbook, and navigate to your kibana site to check that the installation worked as expected.
-	* Navigate to http://[your.elk.ip]:5601/app/kibana.
+	* `Navigate to http://[your.elk.ip]:5601/app/kibana.`
 
 ### Using Filebeat
 To use filebeat:
-- Edit /etc/ansible/files/filebeat-config.yml in the ansible container on the control node to include the ELK IP address.
-	* Note: To ensure security, remember to change the default login credentials.
+- `Edit /etc/ansible/files/filebeat-config.yml in the ansible container on the control node to include the ELK IP address.`
+	* `Note: To ensure security, remember to change the default login credentials.`
 - Run the playbook file
-	* ansible-playbook /etc/ansible/roles/filebeat-playbook.yml
+	* `ansible-playbook /etc/ansible/roles/filebeat-playbook.yml`
 
 ### Using Metricbeat
 
 To use Metricbeat:
-- Edit /etc/ansible/files/metricbeat-config.yml in the ansible on the control node to include the ELK IP address.
-	* Note: Remember to update the default login credentials to ensure security.
+- `Edit /etc/ansible/files/metricbeat-config.yml in the ansible on the control node to include the ELK IP address.`
+	* `Note: Remember to update the default login credentials to ensure security.`
 - Run the playbook file
-	* ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml
+	* `ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml`
