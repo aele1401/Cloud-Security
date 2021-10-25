@@ -1,4 +1,4 @@
-# Linux
+# Linux Scripts
 
 This is a collection of Linux scripts that includes:
 - Archiving & Logging
