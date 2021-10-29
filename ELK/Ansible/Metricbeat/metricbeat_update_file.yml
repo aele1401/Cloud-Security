@@ -3,28 +3,28 @@
   hosts: webservers
   become: true
   tasks:
-    # Use command module
+    # Command module to download metricbeat
   - name: Download metricbeat
     command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.15.0-amd64.deb
 
-    # Use command module
+    # Command module that installs metricbeat
   - name: install metricbeat
     command: dpkg -i metricbeat-7.15.0-amd64.deb
 
-    # Use copy module
+    # Copies module
   - name: drop in metricbeat config
     copy:
       src: /etc/ansible/files/metricbeat-config.yml
       dest: /etc/metricbeat/metricbeat.yml
 
-    # Use command module
+    # Enables and configures docker module for metribeat
   - name: enable and configure docker module for metric beat
     command: metricbeat modules enable docker
 
-    # Use command module
+    # Sets up metricbeat
   - name: setup metric beat
     command: metricbeat setup
 
-    # Use command module
+    # Starts metricbeat service
   - name: start metric beat
     command: service metricbeat start
