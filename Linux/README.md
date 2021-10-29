@@ -7,3 +7,4 @@ This is a collection of Linux scripts that includes:
 - Network Security
 - Systems Administration
 - Terminal & Bash
+  * Player & Dealer Correlation
