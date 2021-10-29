@@ -7,4 +7,4 @@ This is a collection of Linux scripts that includes:
 - Network Security
 - Systems Administration
 - Terminal & Bash
-  * Player & Dealer Correlation
+  * Player & Dealer Correlation: This is a simulation on investigating a rogue casino player partnering with an employee to pull off a scam.
