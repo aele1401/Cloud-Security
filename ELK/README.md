@@ -21,7 +21,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to optimizing resources and response.
 
-Integrating an ELK server allows administrators to easily monitor the vulnerable VMs for changes to the log files and system metrics.
+Integrating an ELK server allows administrators to easily monitor the vulnerable virtual machines for changes to the log files and system metrics.
 
 The configuration details of each machine may be found below.
 
@@ -39,7 +39,7 @@ The machines on the internal network are not exposed to the public internet.
 
 Only the Jump Box and ELK machines can accept connections from the internet. Access to these machine are only allowed from specific IP addresses that are whitelisted.
 
-Machines within the network can only be accessed by web servers.
+Machines within the internal network can only be accessed by web servers.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -56,7 +56,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - Installs docker images (docker.io), python module (python3-pip), and enables docker service.
 - Increases system memory with sysctl module.
-- Downloads and launches docker containers (i.e., web, elk, etc.)
+- Downloads and launches docker containers (web & elk)
 - Installs, sets up, and enables filebeat & metricbeat.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
@@ -69,7 +69,7 @@ This ELK server is configured to monitor the following machines:
 - Web2: 10.1.0.09
 - Web3: 10.1.0.12
 
-I have installed the following Beats on these machines:
+The following Beats have been installed on these machines:
 - Filebeat
 - Metricbeat
 
@@ -85,7 +85,7 @@ SSH into the control node and follow the steps below:
 	* `Copy web.yml and elk.yml files into your /etc/ansible/roles/ directory under your ansible container.`
 - Attach your ansible docker container.
 	* `Attach with: sudo docker attach [your.container.name]`
-- Update the ansible.cfg file to include your ELK server IP address.
+- Update the ansible configuration (ansible.cfg) file to include your ELK server IP address.
 	* `Navigate to /etc/ansible/hosts and update the hosts file to include your ELK server IP address.`
 	* `Note: Run ansible_python_interpreter=/usr/bin/python3 to make sure that the correct python module is installed.` 
 - Run the playbook, and navigate to your kibana site to check that the installation worked as expected.
