@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment
+# Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
@@ -7,15 +7,15 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above or portions of the deployment. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
 This document contains the following details:
-- Description of the Topology
-- Access Policies
-- ELK Configuration
-  - Beats in Use
-  - Machines Being Monitored
-- How to Use the Ansible Build
+* Description of the Topology
+* Access Policies
+* ELK Configuration
+	- Beats in Use
+	- Machines Being Monitored
+* How to Use the Ansible Build
 
 
-### Description of the Topology
+## Description of the Topology
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, a Vulnerable Web Application.
 
@@ -33,7 +33,7 @@ The configuration details of each machine may be found below.
 | Web3     |App Server    | 10.1.0.12      | Linux            |
 | ELK      |ELK Server    | 192.168.1.100  | Linux            |
 
-### Access Policies
+## Access Policies
 
 The machines on the internal network are not exposed to the public internet. 
 
@@ -49,9 +49,9 @@ A summary of the access policies in place can be found in the table below.
 | ELK      | Yes                 | Local machine IP     |
 | Web VMs  | No                  | 192.168.1.100        |
 
-### ELK Configuration
+## ELK Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it automates drudgerous tasks.
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it automates manual tasks.
 
 The playbook implements the following tasks:
 - Installs docker images (docker.io), python module (python3-pip), and enables docker service.
@@ -63,7 +63,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ![Docker Diagram](https://github.com/aele1401/Cloud-Security/blob/main/ELK/Diagrams/dockerps.PNG)
 
-### Target Machines & Beats
+## Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 - Web1: 10.1.0.11
 - Web2: 10.1.0.09
@@ -74,34 +74,34 @@ The following Beats have been installed on these machines:
 - Metricbeat
 
 These Beats allow the administrator to collect the following information from each machine:
-- Filebeat to collect file logs that helps with detecting malicious activity and anomalies.
-- Metricbeat collects metric information, which shows system health, performance, and resource usage.
+* Filebeat to collect file logs that helps with detecting malicious activity and anomalies.
+* Metricbeat collects metric information, which shows system health, performance, and resource usage.
 
-### Using the Playbook
+## Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy the configuration (preconfigured) files to your ansible playbook.
-	* `Copy web.yml and elk.yml files into your /etc/ansible/roles/ directory under your ansible container.`
+	* `Copy web.yml and elk.yml files into your "/etc/ansible/roles/" directory under your ansible container.`
 - Attach your ansible docker container.
-	* `Attach with: sudo docker attach [your.container.name]`
+	* `Attach with: "sudo docker attach [your.container.name]"`
 - Update the ansible configuration (ansible.cfg) file to include your ELK server IP address.
-	* `Navigate to /etc/ansible/hosts and update the hosts file to include your ELK server IP address.`
-	* `Note: Run ansible_python_interpreter=/usr/bin/python3 to make sure that the correct python module is installed.` 
+	* `Navigate to "/etc/ansible/hosts" and update the hosts file to include your ELK server IP address.`
+	* `Note: Run "ansible_python_interpreter=/usr/bin/python3" to make sure that the correct python module is installed.` 
 - Run the playbook, and navigate to your kibana site to check that the installation worked as expected.
-	* `Navigate to http://[your.elk.ip]:5601/app/kibana.`
+	* `Navigate to "http://[your.elk.ip]:5601/app/kibana".`
 
-### Using Filebeat
+## Using Filebeat
 To use filebeat:
-- `Edit /etc/ansible/files/filebeat-config.yml in the ansible container on the control node to include the ELK IP address.`
+- `Edit "/etc/ansible/files/filebeat-config.yml" in the ansible container on the control node to include the ELK IP address.`
 	* `Note: To ensure security, remember to change the default login credentials.`
 - Run the playbook file
 	* `ansible-playbook /etc/ansible/roles/filebeat-playbook.yml`
 
-### Using Metricbeat
+## Using Metricbeat
 
 To use Metricbeat:
-- `Edit /etc/ansible/files/metricbeat-config.yml in the ansible on the control node to include the ELK IP address.`
+- `Edit "/etc/ansible/files/metricbeat-config.yml" in the ansible on the control node to include the ELK IP address.`
 	* `Note: Remember to update the default login credentials to ensure security.`
 - Run the playbook file
 	* `ansible-playbook /etc/ansible/roles/metricbeat-playbook.yml`
